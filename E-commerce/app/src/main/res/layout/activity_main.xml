@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,11 +20,13 @@
         </FrameLayout>
 
         <RadioGroup
+            android:id="@+id/group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/radio0"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -34,6 +36,7 @@
                 android:textSize="25dp" />
 
             <RadioButton
+                android:id="@+id/radio1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -43,6 +46,7 @@
                 android:textSize="25dp" />
 
             <RadioButton
+                android:id="@+id/radio2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -52,6 +56,7 @@
                 android:textSize="25dp" />
 
             <RadioButton
+                android:id="@+id/radio3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -61,6 +66,7 @@
                 android:textSize="25dp" />
 
             <RadioButton
+                android:id="@+id/radio4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
