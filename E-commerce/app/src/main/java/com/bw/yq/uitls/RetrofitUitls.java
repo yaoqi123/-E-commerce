@@ -37,7 +37,7 @@ public class RetrofitUitls {
 
         return retrofitUitls;
     }
-    public static Retrofit getRetrofit(final String userId, final String sessionId,String url){
+    public static Retrofit getRetrofit(final int userId, final String sessionId,String url){
         HttpLoggingInterceptor loggingInterceptor=new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
             @Override
             public void log(String message) {
@@ -48,10 +48,10 @@ public class RetrofitUitls {
         OkHttpClient okHttpClient=new OkHttpClient.Builder().addInterceptor(loggingInterceptor).addInterceptor(new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
-                if (!TextUtils.isEmpty(userId)&&!TextUtils.isEmpty(sessionId)){
+                if (!TextUtils.isEmpty(userId+"")&&!TextUtils.isEmpty(sessionId)){
                     Request request=chain.request()
                             .newBuilder()
-                            .addHeader("userId",userId)
+                            .addHeader("userId",userId+"")
                             .addHeader("sessionId",sessionId)
                             .build();
                     return chain.proceed(request);
@@ -68,10 +68,11 @@ public class RetrofitUitls {
        Retrofit  retrofit=new Retrofit.Builder().baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+               .client(okHttpClient)
                 .build();
        return retrofit;
     }
- public <T> T ApiService(final String userId, final String sessionId,String url,Class<T> service){
+ public <T> T ApiService(final int userId, final String sessionId,String url,Class<T> service){
         Retrofit retrofit=getRetrofit(userId,sessionId,url);
        T t = retrofit.create(service);
        return t;

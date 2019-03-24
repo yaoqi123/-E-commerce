@@ -26,7 +26,7 @@ public class Search extends LinearLayout {
     private ImageView img;
     private EditText ev1;
     private TextView dv1;
-
+//搜索
     public interface OnSearchListenter{
         void OnSearch(  String name);
     }
@@ -34,8 +34,14 @@ public class Search extends LinearLayout {
     public void setOnSearchListenter(OnSearchListenter searchListenter){
         this.searchListenter=searchListenter;
     }
-
-
+//二级列表
+    public interface OnERjileibiaoListenter{
+        void Erji();
+}
+public OnERjileibiaoListenter eRjileibiaoListenter;
+    public void setOnERjileibiaoListenter(OnERjileibiaoListenter eRjileibiaoListenter){
+        this.eRjileibiaoListenter=eRjileibiaoListenter;
+    }
     public Search(Context context) {
         super(context);
     }
@@ -51,14 +57,20 @@ public class Search extends LinearLayout {
             @Override
             public void onClick(View v) {
                 String name = ev1.getText().toString();
-                if (TextUtils.isEmpty(name)){
-                    Toast.makeText(getContext(), "不能为空", Toast.LENGTH_SHORT).show();
-                }else{
+
                     if (searchListenter!=null){
                         searchListenter.OnSearch(name);
-                    }
+
                 }
 
+            }
+        });
+        img.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (eRjileibiaoListenter!=null){
+                    eRjileibiaoListenter.Erji();
+                }
             }
         });
     }

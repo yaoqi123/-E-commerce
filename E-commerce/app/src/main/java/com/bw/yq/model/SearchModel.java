@@ -21,9 +21,15 @@ import io.reactivex.subscribers.DisposableSubscriber;
  * @date 2019/3/19 13:50
  */
 public class SearchModel {
+    public interface OnSeachModelListenter{
+        void seach(List<Search> result);
+    }
+    public OnSeachModelListenter seachModelListenter;
+    public void setOnSeachModelListenter(OnSeachModelListenter seachModelListenter){
+this.seachModelListenter=seachModelListenter;    }
 
     public void send(String keyword, int count, int page) {
-        Apiservice apiservice = RetrofitUitls.OnInstents().ApiService(null, null, Api.Searchurl, Apiservice.class);
+        Apiservice apiservice = RetrofitUitls.OnInstents().ApiService(0, null, Api.Searchurl, Apiservice.class);
         apiservice.Search(keyword,page,count).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new DisposableSubscriber<SearchBean>() {
@@ -31,6 +37,10 @@ public class SearchModel {
                     public void onNext(SearchBean searchBean) {
                         List<Search> result = searchBean.getResult();
                         Log.i("xxx",result.toString());
+                        if (seachModelListenter!=null){
+
+                            seachModelListenter.seach(result);
+                        }
                     }
 
                     @Override

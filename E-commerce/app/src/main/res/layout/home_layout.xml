@@ -12,34 +12,58 @@
             android:id="@+id/home_search"
             android:layout_width="match_parent"
             android:layout_height="60dp">
-
         </com.bw.yq.wegit.Search>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/li"
+            android:visibility="gone"
+            >
+        <ImageView
+            android:id="@+id/img"
+            android:layout_gravity="center"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:src="@drawable/c"/>
+        </LinearLayout>
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:visibility="gone"
+            android:id="@+id/home_rlv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/yuan"
+            >
+
+        </com.jcodecraeer.xrecyclerview.XRecyclerView>
 
         <ScrollView
+
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <android.support.v4.view.ViewPager
+                <com.stx.xhb.xbanner.XBanner
+
                     android:id="@+id/home_pager"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:visibility="gone">
+                    android:layout_height="200dp">
 
-                </android.support.v4.view.ViewPager>
+                </com.stx.xhb.xbanner.XBanner>
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/home_rlv"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:visibility="gone">
+              <android.support.v7.widget.RecyclerView
+                  android:id="@+id/rlv1"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
 
-                </android.support.v7.widget.RecyclerView>
+              </android.support.v7.widget.RecyclerView>
             </LinearLayout>
-        </ScrollView>
+       </ScrollView>
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

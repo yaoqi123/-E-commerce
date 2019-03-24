@@ -12,15 +12,28 @@ import butterknife.ButterKnife;
  * @package com.bw.yq.base
  * @date 2019/3/18 13:42
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity<V> extends AppCompatActivity {
+
+    public V presenter;
+
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layoutResID());
         ButterKnife.bind(this);
+        presenter = getPresenter();
+
+
         initView();
         getData();
     }
+
+
+
+
+    public abstract V getPresenter();
 
 
     protected abstract int layoutResID();

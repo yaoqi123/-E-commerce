@@ -44,6 +44,13 @@ public class MainActivity extends BaseActivity {
     private MyFragment fragment;
     private OrderFragment orderFragment;
 
+
+
+    @Override
+    public Object getPresenter() {
+        return null;
+    }
+
     @Override
     protected int layoutResID() {
         return R.layout.activity_main;

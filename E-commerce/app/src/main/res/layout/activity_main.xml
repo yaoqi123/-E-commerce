@@ -23,57 +23,60 @@
             android:id="@+id/group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@mipmap/rectangle"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radio0"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
                 android:button="@null"
                 android:gravity="center"
-                android:text="首页"
-                android:textSize="25dp" />
+                android:background="@drawable/home"
+                />
 
             <RadioButton
                 android:id="@+id/radio1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="50dp"
                 android:button="@null"
                 android:gravity="center"
-                android:text="分类"
-                android:textSize="25dp" />
+               android:background="@drawable/circle"
+                 />
 
             <RadioButton
                 android:id="@+id/radio2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="50dp"
                 android:button="@null"
                 android:gravity="center"
-                android:text="购物车"
-                android:textSize="25dp" />
+               android:background="@drawable/san"
+                 />
 
             <RadioButton
                 android:id="@+id/radio3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:button="@null"
                 android:gravity="center"
-                android:text="分类"
+                android:layout_marginLeft="50dp"
+              android:background="@drawable/classification"
                 android:textSize="25dp" />
 
             <RadioButton
                 android:id="@+id/radio4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:button="@null"
                 android:gravity="center"
-                android:text="我的"
-                android:textSize="25dp" />
+                android:layout_marginLeft="50dp"
+              android:background="@drawable/my"
+
+                />
         </RadioGroup>
 
 

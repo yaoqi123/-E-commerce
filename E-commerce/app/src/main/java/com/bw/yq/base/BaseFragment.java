@@ -17,9 +17,12 @@ import butterknife.Unbinder;
  * @package com.bw.yq.base
  * @date 2019/3/20 10:03
  */
-public abstract class BaseFragment<T> extends Fragment {
+public abstract class BaseFragment<T, V, Z, R> extends Fragment {
 
     public T presenter;
+    public V homepresenter;
+    public Z showpresenter;
+    public R secondpresenter;
 
 
     @Nullable
@@ -31,9 +34,18 @@ public abstract class BaseFragment<T> extends Fragment {
 
         initView(view);
         presenter = getPresenter();
+        homepresenter = getHomePresenter();
+        showpresenter = getShowPresenter();
+        secondpresenter = getSecondPresenter();
         getData();
         return view;
     }
+
+    public abstract R getSecondPresenter();
+
+    public abstract Z getShowPresenter();
+
+    public abstract V getHomePresenter();
 
 
     protected abstract int layoutResID();
