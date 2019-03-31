@@ -21,23 +21,27 @@ import io.reactivex.subscribers.DisposableSubscriber;
  * @date 2019/3/24 14:14
  */
 public class CartModel {
-    public interface OnCartModelListenter{
-        void OnCart( List<Result> result);
+    public interface OnCartModelListenter {
+        void OnCart(List<Result> result);
     }
+
     public OnCartModelListenter cartModelListenter;
-    public void setOnCartModelListenter(OnCartModelListenter cartModelListenter){
-        this.cartModelListenter=cartModelListenter;
+
+    public void setOnCartModelListenter(OnCartModelListenter cartModelListenter) {
+        this.cartModelListenter = cartModelListenter;
     }
+
     public void send(String sessionId, int userId) {
-        Apiservice apiservice = RetrofitUitls.OnInstents().ApiService(userId, sessionId, Api.CratUrl, Apiservice.class);
-        apiservice.Cart().subscribeOn(Schedulers.io())
+        Apiservice apiservice = RetrofitUitls.OnInstents().ApiService(0, null, Api.CratUrl, Apiservice.class);
+        Log.i("hhh", userId + "========" + sessionId);
+        apiservice.Cart(sessionId, userId).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new DisposableSubscriber<CartBean>() {
                     @Override
                     public void onNext(CartBean cartBean) {
                         List<Result> result = cartBean.getResult();
-//                        Log.i("qqq",result.size()+"");
-                        if (cartModelListenter!=null){
+                        Log.i("qqq", result.size() + "");
+                        if (cartModelListenter != null) {
                             cartModelListenter.OnCart(result);
 
                         }

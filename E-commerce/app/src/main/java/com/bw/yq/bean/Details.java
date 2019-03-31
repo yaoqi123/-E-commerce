@@ -7,18 +7,39 @@ package com.bw.yq.bean;
  * @date 2019/3/19 19:12
  */
 public class Details {
+    private int categoryId;
+    private int commodityId;
     private String picture;
     private String commodityName;
     private String price;
     private String stock;
     private String details;
 
-    public Details(String picture, String commodityName, String price, String stock, String details) {
+
+    public Details(int categoryId, int commodityId, String picture, String commodityName, String price, String stock, String details) {
+        this.categoryId = categoryId;
+        this.commodityId = commodityId;
         this.picture = picture;
         this.commodityName = commodityName;
         this.price = price;
         this.stock = stock;
         this.details = details;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public int getCommodityId() {
+        return commodityId;
+    }
+
+    public void setCommodityId(int commodityId) {
+        this.commodityId = commodityId;
     }
 
     public String getPicture() {
@@ -64,7 +85,9 @@ public class Details {
     @Override
     public String toString() {
         return "Details{" +
-                "picture='" + picture + '\'' +
+                "categoryId=" + categoryId +
+                ", commodityId=" + commodityId +
+                ", picture='" + picture + '\'' +
                 ", commodityName='" + commodityName + '\'' +
                 ", price='" + price + '\'' +
                 ", stock='" + stock + '\'' +

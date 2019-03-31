@@ -41,11 +41,11 @@ public class QueryActivity extends BaseActivity<QueryPresenter> implements Query
 
     @Override
     protected void getData() {
-        Intent intent = getIntent();
 
+        Intent intent = getIntent();
         String id = intent.getStringExtra("id");
         presenter.query(id);
-        GridLayoutManager manager=new GridLayoutManager(this,2);
+        GridLayoutManager manager = new GridLayoutManager(this, 2);
         queryRlv.setLayoutManager(manager);
 
 

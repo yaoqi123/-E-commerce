@@ -37,7 +37,7 @@ public void setOnHomeModelListenter(OnHomeModelListenter homeModelListenter){
                     @Override
                     public void onNext(BannerBean bannerBean) {
                         List<Banner> result = bannerBean.getResult();
-                        Log.i("ttt",bannerBean.toString());
+
                         if (homeModelListenter!=null){
                             homeModelListenter.Home(result);
                         }

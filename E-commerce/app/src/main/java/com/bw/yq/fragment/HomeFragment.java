@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -46,6 +47,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.stx.xhb.xbanner.XBanner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -80,7 +82,8 @@ public class HomeFragment extends BaseFragment<SearchPresenter, HomePresenter, S
     public int count = 10;
     private RecyclerView rlv;
     private RecyclerView rlv11;
-
+    Handler handler = new Handler();
+    List<com.bw.yq.bean.Search> list;
 
     @Override
     public SecondPresenter getSecondPresenter() {
@@ -123,12 +126,26 @@ public class HomeFragment extends BaseFragment<SearchPresenter, HomePresenter, S
         homeRlv.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
-
+                page = 1;
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        presenter.search(keyword, page, count);
+                        homeRlv.refreshComplete();
+                    }
+                }, 2000);
             }
 
             @Override
             public void onLoadMore() {
-
+                page++;
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        presenter.search(keyword, page, count);
+                        homeRlv.loadMoreComplete();
+                    }
+                }, 2000);
             }
         });
 
@@ -180,8 +197,14 @@ public class HomeFragment extends BaseFragment<SearchPresenter, HomePresenter, S
 
         } else {
             li.setVisibility(View.GONE);
-            SearchAdapter searchAdapter = new SearchAdapter(getActivity(), result);
+            if (page == 1) {
+                list = new ArrayList<>();
+
+            }
+            list.addAll(result);
+            SearchAdapter searchAdapter = new SearchAdapter(getActivity(), list);
             homeRlv.setAdapter(searchAdapter);
+            homeRlv.scrollToPosition(list.size() - (result.size() - 1));
 
         }
 
@@ -191,9 +214,7 @@ public class HomeFragment extends BaseFragment<SearchPresenter, HomePresenter, S
 
     @Override
     public void Banner(final List<Banner> result) {
-//        for (int i = 0; i < result.size(); i++) {
-//            Log.i("xxxxx", result.get(i).imageUrl);
-//        }
+
 
         homePager.setData(result, null);
         homePager.loadImage(new XBanner.XBannerAdapter() {

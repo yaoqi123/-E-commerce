@@ -37,7 +37,7 @@ public void setOnTowModelListenter(OnTowModelListenter towModelListenter){
                     @Override
                     public void onNext(TowBean towBean) {
                         List<Tow> result = towBean.getResult();
-                        Log.i("ll",result.toString());
+
                         if (towModelListenter!=null){
                             towModelListenter.OnTow(result);
                         }

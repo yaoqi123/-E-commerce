@@ -43,7 +43,7 @@ public class RegisterModel {
                     @Override
                     public void onNext(Register register) {
                         String message = register.getMessage();
-                       Log.i("qq",message);
+
                        if (registerModelListenter!=null){
                            registerModelListenter.Reis(register);
                        }

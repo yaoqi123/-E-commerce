@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bw.yq.R;
+import com.bw.yq.activity.AddressActivity;
 import com.bw.yq.activity.LoginActivity;
 import com.bw.yq.base.BaseFragment;
 import com.bw.yq.bean.Login;
@@ -89,7 +90,13 @@ public class MyFragment extends BaseFragment {
              }
          });
 
-
+myAddress.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(getActivity(), AddressActivity.class);
+        startActivity(intent);
+    }
+});
     }
 
 

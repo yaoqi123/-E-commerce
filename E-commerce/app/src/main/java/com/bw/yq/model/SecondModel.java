@@ -37,7 +37,7 @@ public void setOnSecondListenter(OnSecondListenter secondListenter){
                     public void onNext(CecondBean cecondBean) {
 
                         List<Cecond> result = cecondBean.getResult();
-                        Log.i("xxx",result.toString());
+
                         if (secondListenter!=null){
                             secondListenter.second(result);
                         }

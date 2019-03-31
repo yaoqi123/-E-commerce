@@ -97,6 +97,7 @@ zhuce.setOnClickListener(new View.OnClickListener() {
         String nickName = result.getNickName();
         SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putBoolean("登陆",true);
         edit.putString("sessionId",sessionId);
         edit.putInt("userId",userId);
         edit.commit();

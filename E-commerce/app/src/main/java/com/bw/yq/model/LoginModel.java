@@ -41,6 +41,7 @@ public class LoginModel {
                 .subscribeWith(new DisposableSubscriber<LoginBean>() {
                     @Override
                     public void onNext(LoginBean loginBean) {
+
                            if (loginModelListenter!=null){
                                loginModelListenter.Logins(loginBean);
                            }

@@ -70,11 +70,11 @@ public class MainActivity extends BaseActivity {
         homeFragment = new HomeFragment();
         fragment = new MyFragment();
         orderFragment = new OrderFragment();
-       transaction.add(R.id.fram,cartFragment);
-        transaction.add(R.id.fram,classificationFragment);
         transaction.add(R.id.fram,homeFragment);
-        transaction.add(R.id.fram,fragment);
         transaction.add(R.id.fram,orderFragment);
+        transaction.add(R.id.fram,cartFragment);
+        transaction.add(R.id.fram,classificationFragment);
+        transaction.add(R.id.fram,fragment);
         transaction.show(homeFragment).hide(cartFragment).hide(classificationFragment).hide(orderFragment).hide(fragment);
  transaction.commit();
  group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

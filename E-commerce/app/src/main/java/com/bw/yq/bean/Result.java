@@ -11,15 +11,20 @@ public class Result {
     private int commodityId;
     private String commodityName;
     private String pic;
-    private String price;
+    private double price;
     private int count;
+    private boolean isChecd;
 
-    public Result(int commodityId, String commodityName, String pic, String price, int count) {
-        this.commodityId = commodityId;
-        this.commodityName = commodityName;
-        this.pic = pic;
-        this.price = price;
-        this.count = count;
+    @Override
+    public String toString() {
+        return "Result{" +
+                "commodityId=" + commodityId +
+                ", commodityName='" + commodityName + '\'' +
+                ", pic='" + pic + '\'' +
+                ", price=" + price +
+                ", count=" + count +
+                ", isChecd=" + isChecd +
+                '}';
     }
 
     public int getCommodityId() {
@@ -46,11 +51,11 @@ public class Result {
         this.pic = pic;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -62,14 +67,20 @@ public class Result {
         this.count = count;
     }
 
-    @Override
-    public String toString() {
-        return "Result{" +
-                "commodityId=" + commodityId +
-                ", commodityName='" + commodityName + '\'' +
-                ", pic='" + pic + '\'' +
-                ", price='" + price + '\'' +
-                ", count=" + count +
-                '}';
+    public boolean isChecd() {
+        return isChecd;
+    }
+
+    public void setChecd(boolean checd) {
+        isChecd = checd;
+    }
+
+    public Result(int commodityId, String commodityName, String pic, double price, int count, boolean isChecd) {
+        this.commodityId = commodityId;
+        this.commodityName = commodityName;
+        this.pic = pic;
+        this.price = price;
+        this.count = count;
+        this.isChecd = isChecd;
     }
 }

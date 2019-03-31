@@ -36,7 +36,7 @@ this.seachModelListenter=seachModelListenter;    }
                     @Override
                     public void onNext(SearchBean searchBean) {
                         List<Search> result = searchBean.getResult();
-                        Log.i("xxx",result.toString());
+
                         if (seachModelListenter!=null){
 
                             seachModelListenter.seach(result);

@@ -34,7 +34,7 @@ public void setOnShowModelListenter(OnShowModelListenter showModelListenter){
                     @Override
                     public void onNext(ShowBean showBean) {
                         ShowBean.ResultEntity result = showBean.getResult();
-                        Log.i("yyy",result.toString());
+
                         if (showModelListenter!=null){
                             showModelListenter.Show(result);
                         }

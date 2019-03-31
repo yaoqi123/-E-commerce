@@ -39,19 +39,22 @@
                     android:layout_weight="1">
 
                     <CheckBox
+                        android:id="@+id/quan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="全选" />
 
                     <TextView
+                        android:id="@+id/jiaqian"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:text="合计：" />
+                        android:text="总价：" />
 
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/qujiesuan"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:background="@color/colorAccent"

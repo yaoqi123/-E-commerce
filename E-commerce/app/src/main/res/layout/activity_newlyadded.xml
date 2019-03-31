@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.NewlyaddedActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:background="@drawable/yuan"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="新增收货地址"
+        android:textSize="30dp"
+        android:gravity="center"/>
+<LinearLayout
+    android:layout_marginTop="30dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="收件人"
+        />
+    <EditText
+        android:id="@+id/shoujianren"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/yuan"
+        />
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手机号码"
+            />
+        <EditText
+            android:id="@+id/shouji"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/yuan"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/shouhuo"
+
+            android:text="所在地区"
+            />
+
+        <EditText
+            android:id="@+id/shouhuo"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/yuan"
+            />
+        <ImageView
+            android:id="@+id/dianji"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+           android:src="@mipmap/ic_launcher"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="详情地址"
+            />
+        <EditText
+            android:id="@+id/xiangqingdizhi"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/yuan"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="邮政编码"
+            />
+        <EditText
+            android:id="@+id/youzheng"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/yuan"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:layout_marginTop="30dp"
+            android:id="@+id/tijiao"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="确定提交"
+            android:textColor="@color/colorAccent"
+            android:background="@drawable/yuan"
+            android:layout_gravity="center"
+            android:textSize="30dp"/>
+    </LinearLayout>
+</LinearLayout>

@@ -22,7 +22,10 @@
         <activity android:name=".activity.DetailsActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.QueryActivity"></activity>
+        <activity android:name=".activity.QueryActivity" />
+        <activity android:name=".activity.AddressActivity" />
+        <activity android:name=".activity.NewlyaddedActivity" />
+        <activity android:name=".activity.OrderActivity"></activity>
     </application>
 
 </manifest>

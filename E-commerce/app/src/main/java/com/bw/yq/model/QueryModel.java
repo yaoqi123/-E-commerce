@@ -37,7 +37,7 @@ public void setOnQueryListenter(OnQueryListenter queryListenter){
             @Override
             public void onNext(QueryBean queryBean) {
                 List<Querys> result = queryBean.getResult();
-                Log.i("xxx",result.toString());
+
                 if (queryListenter!=null){
                     queryListenter.Querys(result);
                 }
